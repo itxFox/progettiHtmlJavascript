@@ -1,0 +1,110 @@
+* {  /*per adattare l'area di gioco in base se la finestra è schermo pieno o no*/
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {  /*area di gioco*/
+  height: 400px;
+  position: relative;
+  border: 2px solid white;
+  border-bottom: none;
+  margin: 20px;
+  margin-bottom: 0;
+}
+
+#containerCannon { /*contenitore cannone*/
+  border: 2px solid white;
+  height: 78px;
+  position: relative;
+  border-top: none;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#animateCannon {  /*immagine cannone*/
+  width: 50px;
+  height: 50px;
+}
+
+#itemCannon{  /*div contenitore img cannone*/
+  position: absolute;
+  text-align: center;
+}
+
+#animate {  /*img invasore*/
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+#btReset{  /*bottone reset*/
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  text-decoration:none; 
+}
+.button { /*bottoni accesi*/
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  text-decoration:none; 
+}
+
+.buttonOff {  /*bottoni spenti*/
+  color: rgba(0, 0, 0, 0.287);
+  border: 2px solid rgba(0, 0, 0, 0.275);
+  background-color: rgba(255, 255, 255, 0.416);
+}
+
+.buttonShootOff {  /*bottone spara spento*/
+  margin-left: 45%;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 24px;
+  border-radius: 10px;
+  color: rgb(186, 186, 186);
+  border: 2px solid rgb(143, 143, 143);
+  background-color: rgb(255, 255, 255);
+}
+
+.buttonShoot { /*bottone spara acceso*/
+  margin-left: 45%;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 24px;
+  border-radius: 10px;
+  color: rgb(255, 0, 0);
+  border: 2px solid rgb(255, 0, 0);
+  background-color: rgb(255, 255, 255);
+  
+}
+
+video {  /*video in bg*/
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+#playerName{  /*tag player*/
+  color:white;
+}
+
+
+#buttonScore{  /*casella del punteggio*/
+  color:rgb(0, 0, 0);
+  border: 2px solid black;
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+  width: 110px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#scoreContainer{   /*contenitore casella del punteggio*/
+  text-align: center;
+  height: 40px;
+  
+}

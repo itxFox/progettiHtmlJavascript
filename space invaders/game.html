@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Space Invaders Play</title>
+  <link rel="stylesheet" href="game.css">
+  <script src="game.js"></script>
+</head>
+
+<!--funzioni all'onload che permettono di premuovere il cannone e l'invasore al caricamento della pagina-->
+
+<body onload="preMove(); moveCannon()">
+  <!--video in sottofondo-->
+  <video autoplay loop muted>
+    <source src="video/space.mp4" type="video/mp4">
+  </video>
+
+  <!--bottoni di avvio reset e return alla main page-->
+  <p>
+    <button class="button" id="btStart" onclick="reset(); myMove()">START</button>
+  </p>
+  <p>
+    <button class="button" id="btReset" onclick="reset();preMove()">RESET</button>
+  </p>
+  <p>
+    <button onclick="reset()"><a id="btReset" href="main.html">RETURN</a></button>
+  </p>
+  <!--contenitore gioco-->
+  <div id="container">
+    <img src="images/space invader.png" id="animate" alt="">
+  </div>
+  <!--contenitore cannone-->
+  <div id="containerCannon">
+
+    <!--contenitore oggetto cannone-->
+    <div id="itemCannon">
+      <!--immagine cannone-->
+      <img src="images/cannon.png" id="animateCannon" alt="">
+      <!--player tag-->
+      <h4 id="playerName">PlayerName</h4>
+      <!--script per inserire il player tag del giocatore-->
+      <script>
+        var testo = localStorage.getItem('testo');
+        document.getElementById('playerName').textContent = testo;
+      </script>
+    </div>
+  </div>
+  <!--bottone per sparare che parte disattivato-->
+  <p>
+    <button class="buttonShootOff" id="btShoot" onclick="shoot()" disabled>SHOOT</button>
+  </p>
+  <!--contenitore punti-->
+  <div id="scoreContainer">
+    <p id="buttonScore">score:</p>
+  </div>
+</body>
+
+</html>

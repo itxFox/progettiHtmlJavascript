@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Space Invaders Main Menu</title>
+    <link href="main.css" rel="stylesheet">
+
+    <!--audio sottofondo-->
+    <script>
+        const music = new Audio('./audio/track.mp3');
+        music.loop = true;
+        music.oncanplaythrough = function () {
+            music.play();
+        }
+    </script>
+
+    <!--audio click bottoni-->
+    <audio id="myAudio">
+        <source src="audio/click.mp3" type="audio/mpeg">
+    </audio>
+    <!--script audio click bottoni-->
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <!--video sottofondo-->
+    <video autoplay loop muted>
+        <source src="video/space.mp4" type="video/mp4">
+    </video>
+
+    <!--form input nickname e bottoni-->
+    <form class="form">
+        <img alt="" class="logo" src="images/logo.png">
+        <input id="testo" class="inputText" placeholder="nickname" type="text" maxlength="10">
+
+        <div class="selectDifficulty">
+            <button class="facile" type="button" onclick="playClick(); setSpeed(20);">easy</button>
+            <button class="medio" type="button" onclick="playClick(); setSpeed(13);">medium</button>
+            <button class="difficile" type="button" onclick="playClick(); setSpeed(6);">hard</button>
+            <button class="leggenda" type="button" onclick="playClick(); setSpeed(0);">legend</button>
+        </div>
+    </form>
+
+    <!--h3 e div difficoltà-->
+    <h3 id="h3LevelSetted">level selected:</h3>
+    <div id="levelSetted">-</div>
+    <button class="inputSubmit" onclick="playClick(); salvaTesto()"><a href="game.html">PLAY</a></button>
+
+    <footer>
+        <p>Developed By @Fox_Incorporation</p>
+    </footer>
+
+    <!--script per impostare la difficoltà e il nome impostati-->
+    <div id="speedSetted">-</div>
+    <script>
+        function salvaTesto() {
+            var testo = document.getElementById('testo').value;
+            localStorage.setItem('testo', testo);
+            let speedFrame = Number(document.getElementById("speedSetted").innerHTML);
+            localStorage.setItem("speedFrame", speedFrame);
+        }
+    </script>
+
+</body>
+
+</html>
